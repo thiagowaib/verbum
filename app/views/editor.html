@@ -10,12 +10,35 @@
     >
     <link rel="stylesheet" href="../resources/css/reset.css">
     <link rel="stylesheet" href="../resources/css/editor.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
     <title>Verbum</title>
 </head>
 <body>
     <!-- Custom Header -->
-    <header>
-
+    <header class="header">
+        <div class="header-tools">
+            <ul>
+                <li id="header-tools-open">
+                    Open
+                </li>
+                <li id="header-tools-save">
+                    Save
+                </li>
+            </ul>
+        </div>
+        <nav class="header-nav">
+            <ul>
+                <li id="header-nav-minimize">
+                    <i class="material-icons">minimize</i>
+                </li>
+                <li id="header-nav-fullscreen">
+                    <i class="material-icons">layers</i>
+                </li>
+                <li id="header-nav-close">
+                    <i class="material-icons">close</i>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Tools -->
@@ -47,11 +70,13 @@
        <iframe
        id = "editor-iframe"
        name = "richTextField"
+       src = "editor-area.html"
        >
        </iframe>
     </section>
 
     <!-- Scripts -->
+    <script src="../resources/js/header.js"></script>
     <script src="../resources/js/editor.js"></script>
 </body>
 </html>

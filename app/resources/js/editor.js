@@ -11,11 +11,13 @@ const fontSizeSpan = document.querySelector("#font-size-span")
 let editorFontSize = 14
 fontSizeSpan.innerHTML = editorFontSize
 
+// Iframe Text Styling
 richTextField.document.designMode = "On"
 editorBody.style.fontSize = `${editorFontSize}px`
 editorBody.style.fontWeight = "500"
 editorBody.style.fontFamily = "'Barlow', sans-serif"
 
+// Event Behaviors for the Tool Bar
 toolBold.addEventListener('mousedown', () => {
     richTextField.document.execCommand('bold')
 })
