@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 /* Header */
 .header{
     display: flex;
@@ -20,7 +21,7 @@
 }
 .header-tools ul li{
     font-size: 1.5em;
-    padding: 5px 5px;
+    padding: 10px 5px;
     margin: 0 10px;
     transition: all .2s;
 }
@@ -28,6 +29,18 @@
     cursor: pointer;
     color: black;
     transform: scale(1.1);
+}
+
+/* Header SPAN {Verbum} */
+.header span{
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    flex: 1;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 700;
+    padding: 10px;
 }
 
 /* Header NAV */
@@ -43,7 +56,7 @@
     transition: all .2s;
 }
 .header-nav ul li i{
-    font-size: 2em;
+    font-size: 1.5em;
 }
 .header-nav ul li:hover{
     background-color: #e7e7e7;
