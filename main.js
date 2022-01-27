@@ -1,10 +1,8 @@
 const { app, BrowserWindow, ipcMain, dialog } = require('electron')
-const fs = require('fs')
-const path = require('path')
 
-require('electron-reload')(__dirname, {
-  electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
-});
+// require('electron-reload')(__dirname, {
+//   electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+// });
 
 let window = null
 
@@ -16,6 +14,7 @@ const createWindow = () => {
         height: 600,
         frame: false,
         titleBarStyle: 'hidden',
+        icon: __dirname + './app/resources/assets/verbum-icon.png',
         webPreferences: {
           nodeIntegration: true,
           contextIsolation: false,

@@ -13,6 +13,6 @@
   },
   "scripts": {
     "start": "electron main.js",
-    "build": "electron-packager . Verbum --all --icon 'app/resources/assets/verbum-icon.icns'"
+    "build": "electron-packager . Verbum --icon=app/resources/assets/verbum-icon.ico --platform=win32 --arch=x64"
   }
 }
