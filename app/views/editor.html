@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    >
     <link rel="stylesheet" href="../resources/css/reset.css">
     <link rel="stylesheet" href="../resources/css/editor.css">
     <title>Verbum</title>
@@ -18,21 +22,33 @@
     <nav class="editor-tools">
         <ul>
             <li id="tool-bold">
-                Bold
+                <i class="material-icons">format_bold</i>
             </li>
             <li id="tool-italic">
-                Italic
+                <i class="material-icons">format_italic</i>
             </li>
+            <li id="tool-underline">
+                <i class="material-icons">format_underline</i>
+            </li>
+            <div>
+                <li id="tool-minus">
+                    <i class="material-icons">remove</i>
+                </li>
+                <span id="font-size-span"></span>
+                <li id="tool-add">
+                    <i class="material-icons">add</i>
+                </li>
+            </div>  
         </ul>
     </nav>
 
     <!-- Editor -->
     <section class="editor-area">
-        <div 
-        id="editor-div"
-        contenteditable
-        >
-        </div>
+       <iframe
+       id = "editor-iframe"
+       name = "richTextField"
+       >
+       </iframe>
     </section>
 
     <!-- Scripts -->

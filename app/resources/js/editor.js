@@ -1,67 +1,41 @@
 const toolBold = document.querySelector("#tool-bold")
 const toolItalic = document.querySelector("#tool-italic")
-const editorArea = document.querySelector("#editor-div")
+const toolUnderline = document.querySelector("#tool-underline")
+const toolMinus = document.querySelector("#tool-minus")
+const toolAdd = document.querySelector("#tool-add")
 
-// ? https://www.codeproject.com/Answers/897650/Replacing-selected-text-HTML-JavaScript#answer1
-const handleBoldClick = () => {
-    let sel, range, node;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = window.getSelection().getRangeAt(0);
-            
-            let html = '<span style="font-weight:700;">' + range + '</span>'
-            range.deleteContents();
-            
-            let el = document.createElement("div");
-            el.innerHTML = html;
-            let frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-        }
-    } else if (document.selection && document.selection.createRange) {
-        range = document.selection.createRange();
-        range.collapse(false);
-        range.pasteHTML(html);
+const editorIframe = document.querySelector("#editor-iframe")
+const editorBody = editorIframe.contentWindow.document.body
+
+const fontSizeSpan = document.querySelector("#font-size-span")
+let editorFontSize = 14
+fontSizeSpan.innerHTML = editorFontSize
+
+richTextField.document.designMode = "On"
+editorBody.style.fontSize = `${editorFontSize}px`
+editorBody.style.fontWeight = "500"
+editorBody.style.fontFamily = "'Barlow', sans-serif"
+
+toolBold.addEventListener('mousedown', () => {
+    richTextField.document.execCommand('bold')
+})
+toolItalic.addEventListener('mousedown', () => {
+    richTextField.document.execCommand('italic')
+})
+toolUnderline.addEventListener('mousedown', () => {
+    richTextField.document.execCommand('underline')
+})
+toolMinus.addEventListener('mousedown', () => {
+    if(editorFontSize>4) {
+        editorFontSize--
+        editorBody.style.fontSize = `${editorFontSize}px`
+        fontSizeSpan.innerHTML = editorFontSize
     }
-}
-
-// ? https://www.codeproject.com/Answers/897650/Replacing-selected-text-HTML-JavaScript#answer1
-const handleItalicClick = () => {
-    let sel, range, node;
-    if (window.getSelection) {
-        sel = window.getSelection();
-        if (sel.getRangeAt && sel.rangeCount) {
-            range = window.getSelection().getRangeAt(0);
-            
-            let html = '<span style="font-style:italic;">' + range + '</span>'
-            range.deleteContents();
-            
-            let el = document.createElement("div");
-            el.innerHTML = html;
-            let frag = document.createDocumentFragment(), node, lastNode;
-            while ( (node = el.firstChild) ) {
-                lastNode = frag.appendChild(node);
-            }
-            range.insertNode(frag);
-        }
-    } else if (document.selection && document.selection.createRange) {
-        range = document.selection.createRange();
-        range.collapse(false);
-        range.pasteHTML(html);
+})
+toolAdd.addEventListener('mousedown', () => {
+    if(editorFontSize<72) {
+        editorFontSize++
+        editorBody.style.fontSize = `${editorFontSize}px`
+        fontSizeSpan.innerHTML = editorFontSize
     }
-}
-
-const preventDoubleDiv = (event) => {
-    if (event.key === 'Enter') {
-        document.execCommand('insertLineBreak')
-        event.preventDefault()
-    }    
-}
-
-
-toolBold.addEventListener('mousedown', handleBoldClick)
-toolItalic.addEventListener('mousedown', handleItalicClick)
-editorArea.addEventListener('keydown', (e) => preventDoubleDiv)
+})
