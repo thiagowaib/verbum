@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link 
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    >
+    <link rel="stylesheet" href="../resources/css/reset.css">
+    <link rel="stylesheet" href="../resources/css/editor.css">
+    <link rel="stylesheet" href="../resources/css/header.css">
+    <title>Verbum</title>
+</head>
+<body>
+    <!-- Custom Header -->
+    <header class="header">
+        <div class="header-tools">
+            <ul>
+                <li id="header-tools-open">
+                    Load
+                </li>
+                <li id="header-tools-save">
+                    Save
+                </li>
+            </ul>
+        </div>
+        <span>Verbum</span>
+        <nav class="header-nav">
+            <ul>
+                <li id="header-nav-minimize">
+                    <i class="material-icons">minimize</i>
+                </li>
+                <li id="header-nav-fullscreen">
+                    <i class="material-icons">all_out</i>
+                </li>
+                <li id="header-nav-close">
+                    <i class="material-icons">close</i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Tools -->
+    <nav class="editor-tools">
+        <ul>
+            <li id="tool-bold">
+                <i class="material-icons">format_bold</i>
+            </li>
+            <li id="tool-italic">
+                <i class="material-icons">format_italic</i>
+            </li>
+            <li id="tool-underline">
+                <i class="material-icons">format_underline</i>
+            </li>
+            <div>
+                <li id="tool-minus">
+                    <i class="material-icons">remove</i>
+                </li>
+                <span id="font-size-span"></span>
+                <li id="tool-add">
+                    <i class="material-icons">add</i>
+                </li>
+            </div>  
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </ul>
+    </nav>
+
+    <!-- Editor -->
+    <section class="editor-area">
+       <iframe
+       id = "editor-iframe"
+       name = "richTextField"
+       src = "editor-area.html"
+       >
+       </iframe>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../resources/js/editor.js"></script>
+</body>
+</html>

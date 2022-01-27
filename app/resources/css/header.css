@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+/* Header */
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    padding: 10px 0;
+    margin: 0 auto 10px auto;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+/* Header Tools */
+.header-tools{
+    display: flex;
+}
+.header-tools ul{
+    display: flex;
+}
+.header-tools ul li{
+    font-size: 1.5em;
+    padding: 10px 5px;
+    margin: 0 10px;
+    transition: all .2s;
+}
+.header-tools ul li:hover{
+    cursor: pointer;
+    color: black;
+    transform: scale(1.1);
+}
+
+/* Header SPAN {Verbum} */
+.header span{
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+    flex: 1;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 700;
+    padding: 10px;
+}
+
+/* Header NAV */
+.header-nav{
+    display: flex;
+}
+.header-nav ul{
+    display: flex;
+    align-items: center;
+}
+.header-nav ul li{
+    padding: 5px 15px;
+    transition: all .2s;
+}
+.header-nav ul li i{
+    font-size: 1.5em;
+}
+.header-nav ul li:hover{
+    background-color: #e7e7e7;
+    cursor: pointer;
+    color: black;
+    border-radius: 10px;
+}
+.header ul li#header-nav-close:hover{
+    background-color: #f58282;
+}
