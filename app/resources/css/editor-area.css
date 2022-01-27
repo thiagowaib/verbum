@@ -18,6 +18,9 @@
 }
 
 /* Text Styling */
+body{
+    padding: 14px;
+}
 b{
     font-weight: 700;
 }
