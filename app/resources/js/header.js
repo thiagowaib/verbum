@@ -30,13 +30,18 @@ ipcRenderer.on('get-file-text', (event, ...args) => {
     .then(res => res.text())
     .then(text => editorBody.innerHTML = text)
     .catch(err => console.log(err))
-    // 
-    // TODO: Find a way to embed .rtf files into the iFrame
-    // 
-    
 })
 headerToolSave.addEventListener('click', () => {
-    // 
-    // TODO: Save Files as .rtf (saving formating and etc...)
-    // 
+    console.log(editorBody)
+    let a = document.createElement("a")
+    a.setAttribute(
+        'href', 
+        'data:text/html;charset=utf-8,' + 
+        encodeURIComponent(editorBody.innerHTML)
+    )
+    a.setAttribute(
+        "download",
+        "mytext.html"
+    )
+    a.click()
 })

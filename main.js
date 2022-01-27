@@ -35,7 +35,7 @@ ipcMain.on('file-open', () => {
   dialog.showOpenDialog({
     properties: ['openFile'],
      filters: [
-       {name: "Text Files", extensions: ["txt", "rtf"]}
+       {name: "Verbum Files", extensions: ["html", "txt"]}
      ]
   })
   .then((data) => {
