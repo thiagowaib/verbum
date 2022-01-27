@@ -37,6 +37,7 @@ window.onload = () =>
             editorFontSize--
             editorBody.style.fontSize = `${editorFontSize}px`
             fontSizeSpan.innerHTML = editorFontSize
+            editorBody.stye.lineHeight = `${editorFontSize}px`
         }
     })
     toolAdd.addEventListener('mousedown', () => {
@@ -44,6 +45,7 @@ window.onload = () =>
             editorFontSize++
             editorBody.style.fontSize = `${editorFontSize}px`
             fontSizeSpan.innerHTML = editorFontSize
+            editorBody.stye.lineHeight = `${editorFontSize}px`
         }
     })
     colorSwitch.addEventListener('click', () => {
@@ -120,7 +122,7 @@ window.onload = () =>
         let a = document.createElement("a")
         a.setAttribute(
             'href', 
-            'data:text/html;charset=utf-8,' + 
+            'data:text/plain;charset=utf-8,' + 
             encodeURIComponent(editorBody.innerHTML)
         )
         a.setAttribute(
